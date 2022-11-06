@@ -26,12 +26,23 @@ class HomePage extends GetView<HomeController> {
                 children: [
                   Padding(
                     padding: EdgeInsets.all(4.0.wp),
-                    child: Text("My List",
-                    style: TextStyle(
-                      fontSize: 24.0.sp,
-                      fontWeight: FontWeight.bold
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("My List",
+                        style: TextStyle(
+                          fontSize: 24.0.sp,
+                          fontWeight: FontWeight.bold
 
-                    ),),
+                        ),),
+                        Obx(()
+                          => TextButton(onPressed: (){
+                            controller.changeTheme();
+                            Get.changeTheme(controller.theme.value);
+                          }, child: controller.theme.value==ThemeData.dark()?Icon(Icons.dark_mode,color: Colors.white,):Icon(Icons.light_mode,color: Colors.yellow,)),
+                        )
+                      ],
+                    ),
                   ),
                   Obx(
                     ()=> GridView.count(crossAxisCount: 2,

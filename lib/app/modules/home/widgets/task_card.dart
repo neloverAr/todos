@@ -33,7 +33,7 @@ class TaskCard extends StatelessWidget {
           BoxShadow(
             color: Colors.grey[300]!,
             blurRadius: 7,
-            offset: const Offset(0, 7)
+            offset: const Offset(0, 5)
         )]
         ),
         child: Column(
@@ -73,6 +73,7 @@ class TaskCard extends StatelessWidget {
                 Text(task.title,style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 12.0.sp,
+                  color: Colors.black,
                 ),
                   overflow: TextOverflow.ellipsis,//dots ...
                 ),

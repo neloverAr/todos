@@ -1,4 +1,0 @@
-#Sat Nov 05 02:40:35 IST 2022
-base.0=/Users/macbook/Projects/getx_todo_list/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

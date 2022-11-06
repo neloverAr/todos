@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_todo_list/app/data/services/storage/repository.dart';
 
@@ -18,6 +19,7 @@ class HomeController extends GetxController {
  final task = Rx<Task?>(null);
  final doingTodos = <dynamic>[].obs;
  final doneTodos = <dynamic>[].obs;
+ final theme =  Rx<ThemeData>(ThemeData.light());
 
   @override
   void onInit() {
@@ -39,6 +41,14 @@ class HomeController extends GetxController {
 
   void changeTabIndex(int index){
     tabIndex.value = index;
+  }
+
+  void changeTheme(){
+    if(Get.isDarkMode){
+      theme.value = ThemeData.light();
+    }else{
+      theme.value = ThemeData.dark();
+    }
   }
 
   void changeChipIndex(int value){
